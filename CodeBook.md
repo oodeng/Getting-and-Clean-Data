@@ -1,3 +1,6 @@
+Codebook for wearable computing dataset
+Variables
+
 subject                    1..2
     Subject number
                            1..30 .Unique identifier assigned to each subject
