@@ -29,24 +29,28 @@ Following is the  output is created in working directory with the name of output
 ## run_analysis.R walkthrough
 It follows the goals step by step.
 
-* Step 1:
-  * Read all the test and training files: y\_test.txt, subject\_test.txt and X_test.txt.
-  * Combine the files to a data frame in the form of subjects, labels, the rest of the data.
+## step 1
+# read all the data
+# put it together in the format of: subjects, labels, everything else
 
-* Step 2:
-  * Read the features from features.txt and filter it to only leave features that are either means ("mean()") or standard deviations ("std()"). The reason for leaving out meanFreq() is that the goal for this step is to only include means and standard deviations of measurements, of which meanFreq() is neither.
-  * A new data frame is then created that includes subjects, labels and the described features.
+## step 2
+# read the features
+# only retain features of mean and standard deviation
+# select only the means and standard deviations from data
+# increment by 2 because data has subjects and labels in the beginning
 
-* Step 3:
-  * Read the activity labels from activity_labels.txt and replace the numbers with the text.
+## step 3
+# read the labels (activities)
+# replace labels in data with label names
 
-* Step 4:
-  * Make a column list (includig "subjects" and "label" at the start)
-  * Tidy-fy the list by removing all non-alphanumeric characters and converting the result to lowercase
-  * Apply the now-good-columnnames to the data frame
-  
-* Step 5:
-  * Create a new data frame by finding the mean for each combination of subject and label. It's done by `aggregate()` function
-  
-* Final step:
-  * Write the new tidy set into a text file called output.txt, formatted similarly to the original files.
+## step 4
+# first make a list of the current column names and feature names
+# then tidy that list
+# by removing every non-alphabetic character and converting to lowercase
+# then use the list as column names for data
+
+## step 5
+# find the mean for each combination of subject and label
+
+## step nothing / Final Step
+# Write the new tidy set into a text file called data_set_with_the_averages.txt, formatted similarly to the original files.
